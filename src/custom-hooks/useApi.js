@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useMutation, useQuery } from "react-query";
 
-function useJsonholder(requestType, link, body) {
+function useApi(requestType, link, body) {
   let data, error, isLoading;
 
   const retrieveData = async () => {
@@ -44,4 +44,4 @@ function useJsonholder(requestType, link, body) {
   };
 }
 
-export default useJsonholder;
+export default useApi;

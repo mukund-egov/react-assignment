@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 
 import "../App.css";
 import { userContext } from "../context/context";
-import useJsonholder from "../custom-hooks/useJsonholder";
+import useApi from "../custom-hooks/useApi";
 
 function Users() {
   // const retrieveUsers = async () => {
@@ -26,7 +26,7 @@ function Users() {
     data: users,
     error,
     isLoading,
-  } = useJsonholder("get", "https://jsonplaceholder.typicode.com/users");
+  } = useApi("get", "https://jsonplaceholder.typicode.com/users");
 
   // throw new Error("testing");
 
