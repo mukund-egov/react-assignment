@@ -40,7 +40,7 @@ const Login = () => {
     <div className="login">
       <form className='login-form' onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
-          <label>Email<a className="red">*</a></label>
+          <label>Email<span className="red">*</span></label>
           <input
             type="text"
             name="email"
@@ -55,7 +55,7 @@ const Login = () => {
           {errors.email && <p className="errorMsg">{errors.email.message}</p>}
         </div>
         <div className="form-control">
-          <label>Password<a className="red">*</a></label>
+          <label>Password<span className="red">*</span></label>
           <input
             type="password"
             name="password"

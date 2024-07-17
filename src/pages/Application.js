@@ -15,6 +15,8 @@ const Application = () => {
     } = useForm();
     const [loading, setLoading] = useState(false);
 
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
     useEffect(() => {
         const savedFormData = sessionStorage.getItem('formData');
         if (savedFormData) {
@@ -39,14 +41,18 @@ const Application = () => {
         console.log(response);
         setLoading(false);
         sessionStorage.removeItem("formData");
+        setIsSubmitted(true);
     }
     // throw new Error("testing");
 
   return (
     <div className='application-page'>
+        {isSubmitted ? (
+            <h2>Form submitted</h2>
+        ) : (
         <form className='data-form' onSubmit={handleSubmit(onSubmit)}>
             <div className='form-control'>
-                <label>Name</label>
+                <label>Name<span className="red">*</span></label>
                 <input 
                     type="text"
                     name="name"
@@ -57,7 +63,7 @@ const Application = () => {
                 {errors.name && <p className='errorMsg'>{errors.name.message}</p>}
             </div>
             <div className="form-control">
-                <label>Email</label>
+                <label>Email<span className="red">*</span></label>
                 <input
                     type="text"
                     name="email"
@@ -81,7 +87,7 @@ const Application = () => {
                 {errors.age && <p className='errorMsg'>{errors.age.message}</p>}
             </div>
             <div className='form-control'>
-                <label>Gender</label>
+                <label>Gender<span className="red">*</span></label>
                 <div>
                     <input
                         type='radio'
@@ -130,7 +136,7 @@ const Application = () => {
             <div className='form-control'>
                 <label>Country</label>
                 <select {...register("country")} >
-                    <option value="">Select Country</option>
+                    {/* <option value="">Select Country</option> */}
                     <option value="USA">USA</option>
                     <option value="UK">UK</option>
                     <option value="Canada">Canada</option>
@@ -147,7 +153,7 @@ const Application = () => {
                 {errors.languages && <p className='errorMsg'>{errors.languages.message}</p>}
             </div>
             <div className='form-control'>
-                <label>Message</label>
+                <label>Message<span className="red">*</span></label>
                 <input
                     type="text"
                     name="message"
@@ -162,9 +168,9 @@ const Application = () => {
                 {errors.message && <p className='errorMsg'>{errors.message.message}</p>}
             </div>
             <div className='form-control'>
-                <label>Phone Number</label>
+                <label>Phone Number<span className="red">*</span></label>
                 <input
-                    type="tel"
+                    type="number"
                     name="phone_number"
                     {...register("phone_number", {
                         required: "Phone number is required",
@@ -181,6 +187,8 @@ const Application = () => {
                 <button type="submit">Submit</button>}
             </div>
         </form>
+
+    )}
     </div>
   )
 }

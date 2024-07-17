@@ -80,21 +80,17 @@ body {
   background-color: black;
   align-items: center;
   border-bottom: 2px solid gray;
+  z-index: 501;
 }
 
   .hamburger {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
   }
 
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
+  .overlay {
+    display: none;
   }
-
+  
   .menu {
     display: none;
   }
@@ -127,6 +123,7 @@ body {
     right: 40px;
     background-color: black;
     padding: 0 10px;
+    padding-right: 30px;
     border: 2px solid gray;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -139,6 +136,20 @@ body {
     
     .hamburger {
       display: flex;
+      cursor: pointer;
+      font-size: 30px;
+      margin-left: 15px;
+    }
+
+    .overlay {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgb(0, 0, 0, 0.3);
+      z-index: 1005;
     }
     
     .menu {
@@ -146,12 +157,15 @@ body {
       flex-direction: column;
       align-items: center;
       color: white;
-      background-color: gray;
-      width: 40%;
-      height: 100%;
+      background-color: black;
       position: absolute;
       top: 0;
       left: 0;
+      padding: 20px;
+      width: 40%;
+      height: 100vh;
+      border-right: 2px solid gray;
+      z-index: 502;
     }
   
     .menu p {
@@ -194,6 +208,7 @@ body {
   align-items: center;
   border-top: 2px solid gray;
   border-right: 2px solid gray;
+  z-index: 500;
   /* overflow-y: auto; */
 }
 
@@ -202,6 +217,7 @@ body {
     flex-direction: column;
     /* width: 20vw; */
     padding: 10px;
+    padding-right: 20px;
   }
 
   .close {
@@ -218,7 +234,10 @@ body {
   .link {
     text-decoration: none;
     color: white;
+    display: block;
+    width: 100%;
     padding: 10px;
+    cursor: pointer;
   }
 
   .link:hover{
@@ -266,7 +285,7 @@ body {
 }
 
  .data-form {
-  background-color: hsl(231, 49%, 57%);
+  background-color: hsl(229, 11%, 28%); /* hsl(231, 49%, 57%); */
   padding: 20px;
   height: fit-content;
   width: 400px;
@@ -281,10 +300,20 @@ body {
 
 button {
   background-color: orange;
+  border: none;
   border-radius: 10px;
-  height: 30px;
-  padding: 5px 10px;
+  font-size: 16px;
+  /* font-weight: bold; */
+  height: 40px;
+  padding: 10px 20px;
+  /* transition: background-color 0.3s ease, box-shadow 0.3s ease; */
+  cursor: pointer;
+  /* outline: none; */
 }
+
+  button:hover {
+    background-color: darkorange;
+  }
 
 .red {
   color: rgb(219, 104, 104);

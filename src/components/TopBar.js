@@ -18,17 +18,17 @@ const TopBar = () => {
     <div className='topbar'>
       {!isTopbarOpen ? (
       <div className='hamburger' onClick={() => setIsTopbarOpen(true)}>
-        <div></div>
-        <div></div>
-        <div></div>
+        ≡
       </div>
       ) :
-      (
+      (<div className='overlay'>
         <div className='menu'>
           <p onClick={() => setIsTopbarOpen(false)}>✕</p>
           <p className='profile-ham'>{user.email.charAt(0).toUpperCase()}</p>
-          <p onClick={handleLogout}>Logout</p>
+          <p className='link' onClick={handleLogout}>Logout</p>
         </div>
+      </div>
+
       )}
       <div className='profile' onClick={() => setIsProfileModalOpen(!isProfileModalOpen)}>
         {user.email.charAt(0).toUpperCase()}
