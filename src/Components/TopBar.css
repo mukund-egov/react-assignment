@@ -1,0 +1,53 @@
+.top-bar-body{
+    padding:10px;
+    background-color: blueviolet;
+    height: 50px;
+}
+
+.top-bar-items{
+    display:flex;
+    align-items:center;
+    margin:0;
+    padding: 10px;
+
+}
+
+.items-list{
+    display:flex;
+    
+}
+.image{
+    margin-right: 250px;
+    
+
+}
+
+.image img{
+    height: 20px;
+}
+    
+.items p{
+    font-size:15px;
+    color:rgb(216, 20, 66);
+    font-weight: 800;
+}
+
+
+
+.items-list{
+    display:flex;
+
+}
+
+.items a{
+    margin-right:20px;
+    text-decoration: none;
+    color: rgb(53, 14, 223);
+    font-weight:bold;
+    font-size:16px;
+
+}
+
+.items a:hover{
+    color:brown;
+}

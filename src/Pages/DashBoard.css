@@ -1,0 +1,32 @@
+/* Dashboard.css */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .content-area {
+    flex: 1;
+    padding: 20px;
+    margin-left: 200px; /* Match the width of the sidebar */
+    background-color: #f4f4f4; /* Light background for contrast */
+  }
+  
+  .content-area a {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .content-area a:hover {
+    text-decoration: underline;
+  }
+  

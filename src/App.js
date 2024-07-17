@@ -1,61 +1,70 @@
-import { Outlet } from "react-router-dom";
-import "./App.css";
-import "./index.css";
-import Navbar from "./components/Navbar.js";
-import Sidebar from "./components/Sidebar.js";
-import ApplicationForm from "./pages/ApplicationForm.js";
-import LoginForm from "./pages/Login";
-import { useState } from "react";
-import {
-  credentailContext,
-  userContext,
-  sidebarContext,
-} from "./context/context.js";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ErrorBoundary } from "./components/ErrorBoundary.js";
+import logo from './logo.svg';
+import './App.css';
+import Login from './Pages/Login';
+import Form from './Pages/Form';
+import Slate from './slate';
+import Form1 from './Components/Form1';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+import {UserContext} from './Contexts/UserContext';
+import { useCallback, useContext } from 'react';
+import Dashboard from './Pages/Dashboard';
+import Users from './Pages/Users';
+
+
 
 function App() {
-  const [credentail, setCredentail] = useState(null);
-  const [user, setUser] = useState(null);
-  const queryClient = new QueryClient();
+  const { user, setUser } = useContext(UserContext);
 
-  const setValue = (value) => {
-    setCredentail(value);
-  };
-
-  const setuser = (value) => {
-    setUser(value);
-  };
-
-  const [sidebaropen, setSidebaropen] = useState(false);
-
-  const dropdown = () => {
-    console.log("YUgvh");
-    setSidebaropen(!sidebaropen);
-  };
 
   return (
-    <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <credentailContext.Provider value={{ credentail, setValue }}>
-          <userContext.Provider value={{ user, setuser }}>
-            {" "}
-            <div className="App">
-              <Navbar props={dropdown} />
-              <div className="sm:flex">
-                <div
-                  className={` sm:block ${sidebaropen ? "block" : "hidden"}`}
-                >
-                  <Sidebar props={dropdown} className="sm:h-screen" />
-                </div>
-                <Outlet className="justify-center" />
-              </div>
-            </div>
-          </userContext.Provider>
-        </credentailContext.Provider>
-      </QueryClientProvider>
-    </ErrorBoundary>
+    // <Login/>
+    // <Form/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login/>} />
+
+        <Route path="/login" element={<Login/>} />
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/form" element={<Form/>} />
+        <Route path="/users" element={<Users/>}/>
+
+      </Routes>
+    </Router>
+
+
+
+
   );
 }
 
 export default App;
+
+
+
+
+// <div>
+//         {/* <Slate></Slate> */}
+//         <Form></Form>
+//         {/* <Form1></Form1> */}
+//         {/* <Login></Login> */}
+// </div>
+
+
+
+
+
+
+
+
+{/* <Router >
+<div className="app">
+  <Routes>
+    <Route path="/login" element={<Login />} />
+    <Route element={<PrivateRoute />}>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/form" element={<Form />} />
+      <Route path="/users" element={<Users />} />
+    </Route>
+  </Routes>
+</div>
+</Router> */}
