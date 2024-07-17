@@ -1,0 +1,8 @@
+.item {
+    display: inline-block;
+    width: 49%; /* Adjust width as needed */
+    padding: 10px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    vertical-align: top; /* Align items to the top */
+}

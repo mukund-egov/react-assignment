@@ -1,0 +1,31 @@
+/* Sidebar.css */
+
+
+  .sidebar {
+    width: 250px; /* Set the width of the sidebar */
+    background-color: #8cf788; /* Background color for visualization */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #4CAF50; /* Hover color */
+  }
+  

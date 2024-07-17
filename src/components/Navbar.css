@@ -1,0 +1,44 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: #f0de41; /* Background color for the navbar */
+    padding: 10px 20px; /* Padding inside the navbar */
+    color: white; /* Text color */
+  }
+  
+  .logo {
+    max-width: 150px; /* Adjust maximum width for logo */
+  }
+  
+  .logo img {
+    max-width: 100%; /* Ensure the logo scales within its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .navbar-icon {
+    width: 30px; /* Adjust width of the icon */
+    height: 30px; /* Adjust height of the icon */
+    margin-left: 10px; /* Margin between icons */
+  }
+  
+  .navbar-buttons {
+    display: flex;
+  }
+  
+  .navbar-button {
+    background-color: transparent; /* Transparent background for buttons */
+    color: white; /* Text color for buttons */
+    border: none; /* Remove border */
+    margin-left: 10px; /* Margin between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .navbar-button:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+
