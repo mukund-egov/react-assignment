@@ -48,7 +48,7 @@ function App() {
                 >
                   <Sidebar props={dropdown} className="sm:h-screen" />
                 </div>
-                <Outlet className="justify-center" />
+                <Outlet className="flex-grow flex justify-center items-center min-h-screen" />
               </div>
             </div>
           </userContext.Provider>
